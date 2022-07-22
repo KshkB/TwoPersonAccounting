@@ -70,7 +70,42 @@ The debt owed by $B$ to $A$ is $x_A - y_A$, the excess which $A$ paid over what 
 
 **Note.** Recording the debt owed by $B$ in this way is indeed consistent. That is, the total debt owed by $B$ is what they paid less what they owe, i.e., $x_B - y_B$. That is each of $B$'s debts, $(x_A + x_B) - t$ and $-(x_A - y_A)$, will sum to precisely what remains on what $B$ owes. That is $((x_A + x_B) - t) + (-(x_A - y_A)) = x_B - y_B$.
 
-### Example transactions
+## Example transactions
 
+### When equal
+
+Suppose Alice and Balkrishna split a taxi fare. The taxi costs $500$ in whatever currency. As they are splitting the fare, each owes $250$. Accordingly $y_A = 250$ and $y_B = 250$. When they pay suppose that:
+
+- Alice pays $350$; Balkrishna pays $150$. 
+
+Then $x_A = 350$ and $x_B = 150$. Note that $x_A + x_B = 500$ so there is no change or external debt. The accounting system will record $x_A - y_A = 350 - 250 = 100$ in Alice's `owed/owes` column. It will likewise record $x_B - y_B = 150 - 250 = -100$ in Balkrishna's `owed/owes` column. 
+
+Balkrishna owes Alice $100$. 
+
+### Overpaid
+
+Alice and Balkrishna took that taxi to a restaurant for dinner. Alice had the sirloin pork cutlet and Balkrishna a full spit roast. Suppose the dinner for both cost 1500. Of this:
+
+- Alice paid $600$ while Balkrishna pids $1200$. 
+
+Then $x_A + x_B = 600 + 1200 = 1800$. This exceeds the amount owed for dinner, being $1500$, resulting in change $1800 - 1500 = 300$. Of the total amount paid, $1800$, Alice paid $1/3$; Balkrishna $2/3$. Hence Alice gets back $(1/3)(300) = 100$ in change; Balkrishna $(2/3)(300) = 200$ in change. Their respective *effective* payments are $\tilde x_A = 600 - 100 = 500$ and $\tilde x_B = 1200 - 200 = 1000$. Note $\tilde x_A + \tilde x_B = 1500$. 
+
+Suppose now that the cost of Alice's dish is $y_A = 700$; and Balkrishna's is $y_B = 800$. The accounting system will record $x_A - y_A = 500 - 700 = -200$ in Alice's `owed/owes` column; and in Balkrishna's `owed/owes` column $x_B - y_B = 1000 - 800 = 200$. 
+
+Combined with the taxi fare, Alice's `owed/owes` column is $100 + (-200) = -100$ and Balkrishna's `owed/owes` column is $-100 + 200 = 100$. Hence Alice now owes Balkrishna an amount of $100$.
+
+### Underpaid
+
+Alice and Balkrishna are running out of cash. On the taxi ride back from the restaurant to wherever they came from, suppose the fare is $500$ and:
+
+- Alice pays $x_A = 350$; Balkrishna pays $x_B = 100$.
+
+The total amount paid is $x_A + x_B = 350 + 100 = 450$, which is $50$ short of what is owed. This thereby creates an external debt obligation. Am amount of $50$ needs to be paid to the taxi driver. 
+
+Alice owed $y_A = 250$ and Balkrishna $y_B = 250$. Since $x_A = 350 > 250$, Alice does not record an external debt. Balkrishna however *does* record such a debt, in an amount of $(x_A + x_B) - t = (350 + 100) - 500 = -50$. Moreover, since Alice overpaid what was owed, $x_A - y_A = 350 - 250 = 100$, Alice's `owed/owes` column records $+100$. On Balkrishna's records, an amount $x_B - y_B + c = 100 - 250 + 50 = -100$ is recorded. This transaction brings Balkrishna back into debt toward Alice. 
+
+Now in combination with the other two transactions, see that Alice's `owed/owes` column is $-100 + (+ 100) = 0$ and Balkrishna's column is $100 + (-100) = 0$. Hence Alice and Balkrishna are in fact all settled up. It remains for Balkrishna to pay the taxi driver $50$, as recorded in Balkrishna's `external debts` column.
+
+**Remark.** As an exercise in using this accounting system, record the above three transactions.
 
 
