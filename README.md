@@ -106,6 +106,6 @@ Alice owed $y_A = 250$ and Balkrishna $y_B = 250$. Since $x_A = 350 > 250$, Alic
 
 Now in combination with the other two transactions, see that Alice's `owed/owes` column is $-100 + (+ 100) = 0$ and Balkrishna's column is $100 + (-100) = 0$. Hence Alice and Balkrishna are in fact all settled up. It remains for Balkrishna to pay the taxi driver $50$, as recorded in Balkrishna's `external debts` column.
 
-**Remark.** As an exercise in using this accounting system, record the above three transactions.
+**Remark.** Record the above three transactions as an exercise in using the program `BillSplitterForTwo`.
 
 
