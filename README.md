@@ -11,6 +11,13 @@ This repository contains the Python program `BillSplitterForTwo` which, once run
 
 The program creates or updates an `.xlsx` file in the same folder containing the program itself.
 
+## Run
+
+```
+pip install pandas xlsxwriter
+python BillSplitterforTwo.py
+```
+
 ## The accounting system
 
 This program is tailored to accounting for *two* people. Not three or higher. The `.xlsx` file created contains two sheets, one for each person.
